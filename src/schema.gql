@@ -1,0 +1,70 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Board {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type User {
+  """created user id"""
+  uid: String!
+  nickname: String!
+}
+
+type Post {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Query {
+  board(id: Int!): Board!
+  findAllUser: [User!]!
+  user(uid: ID!): User!
+  post(id: Int!): Post!
+}
+
+type Mutation {
+  createBoard(createBoardInput: CreateBoardInput!): Board!
+  updateBoard(updateBoardInput: UpdateBoardInput!): Board!
+  removeBoard(id: Int!): Board!
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(uid: ID!): User!
+  createPost(createPostInput: CreatePostInput!): Post!
+  updatePost(updatePostInput: UpdatePostInput!): Post!
+  removePost(id: Int!): Post!
+}
+
+input CreateBoardInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateBoardInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateUserInput {
+  uid: String!
+  nickname: String!
+}
+
+input UpdateUserInput {
+  uid: String!
+  nickname: String!
+}
+
+input CreatePostInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdatePostInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}

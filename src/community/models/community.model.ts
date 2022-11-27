@@ -1,6 +1,6 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { IsString } from 'class-validator';
-import { CustomUuidScalar } from 'src/common/graphql/uuid.scalar';
+import { CustomUuidScalar } from 'src/common/graphql/scalars/uuid.scalar';
 
 @ObjectType()
 export class Community {

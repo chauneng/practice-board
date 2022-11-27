@@ -9,7 +9,7 @@ import { PostModule } from './post/post.module';
 import { join } from 'path';
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { CommunityModule } from './community/community.module';
-import { CustomUuidScalar } from './common/graphql/uuid.scalar';
+import { CustomUuidScalar } from './common/graphql/scalars/uuid.scalar';
 
 @Module({
   imports: [

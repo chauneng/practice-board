@@ -26,7 +26,7 @@ type Query {
   user(uid: ID!): User!
   post(id: Int!): Post!
   communities: [Community!]!
-  community(id: Int!): Community!
+  community(id: UUID!): Community!
 }
 
 type Mutation {
@@ -38,7 +38,7 @@ type Mutation {
   removePost(id: Int!): Post!
   createCommunity(createCommunityInput: CreateCommunityInput!): Community!
   updateCommunity(updateCommunityInput: UpdateCommunityInput!): Community!
-  removeCommunity(id: Int!): Community!
+  removeCommunity(id: UUID!): Community!
 }
 
 input CreateUserInput {
@@ -70,5 +70,5 @@ input CreateCommunityInput {
 input UpdateCommunityInput {
   """Example field (placeholder)"""
   exampleField: Int
-  id: Int!
+  id: UUID!
 }

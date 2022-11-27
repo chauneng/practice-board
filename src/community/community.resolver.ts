@@ -3,6 +3,7 @@ import { Community } from './models/community.model';
 import { CommunityService } from './services/community.service';
 import { CreateCommunityInput } from './models/create-community.input';
 import { UpdateCommunityInput } from './models/update-community.input';
+import { CustomUuidScalar } from 'src/common/graphql/scalars/uuid.scalar';
 
 @Resolver(() => Community)
 export class CommunityResolver {
@@ -21,7 +22,7 @@ export class CommunityResolver {
   }
 
   @Query(() => Community, { name: 'community' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
+  findOne(@Args('id', { type: () => CustomUuidScalar }) id: string) {
     return this.communityService.findOne(id);
   }
 
@@ -36,7 +37,7 @@ export class CommunityResolver {
   }
 
   @Mutation(() => Community)
-  removeCommunity(@Args('id', { type: () => Int }) id: number) {
+  removeCommunity(@Args('id', { type: () => CustomUuidScalar }) id: string) {
     return this.communityService.remove(id);
   }
 }

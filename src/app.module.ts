@@ -15,6 +15,10 @@ import { CustomUuidScalar } from './common/graphql/scalars/uuid.scalar';
   imports: [
     ConfigModule.forRoot(),
     GraphQLModule.forRoot<ApolloDriverConfig>({
+      buildSchemaOptions: {
+        dateScalarMode: 'isoDate',
+        numberScalarMode: 'integer',
+      },
       resolvers: { UUID: CustomUuidScalar },
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
